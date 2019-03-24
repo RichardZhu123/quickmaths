@@ -5,7 +5,7 @@ import GameKit
 
 
 
-public class FirstScene: SKScene {
+public class HomeScene: SKScene {
     
     private var label : SKLabelNode!
     let buttonNodeName = "button"
@@ -15,12 +15,7 @@ public class FirstScene: SKScene {
     
     
     public override func didMove(to view: SKView) {
-        let background = SKSpriteNode(imageNamed: "img.png")
-        background.name = "background"
-        background.setScale(2.8)
-        //background.position = CGPoint(x: frame.midX, y: frame.midY)
-        addChild(background)
-        
+        view.backgroundColor = UIColor(red:0.22, green:0.22, blue:0.30, alpha:1.0)
         let gameName = "Quick Maths"
         let welcome = SKLabelNode(fontNamed: "Lato")
         welcome.text = gameName
@@ -79,9 +74,9 @@ public class FirstScene: SKScene {
     }
 }
 
-extension FirstScene: PlayButtonDelegate {
+extension HomeScene: PlayButtonDelegate {
     func didTapPlay(sender: PlayButton) {
-        let action = SKAction.playSoundFileNamed("popSound.mp3", waitForCompletion: false)
+        let action = SKAction.playSoundFileNamed("click.mp3", waitForCompletion: false)
         self.run(action)
         let transition = SKTransition.crossFade(withDuration: 0)
         let scene1 = GameScene(fileNamed:"GameScene")
