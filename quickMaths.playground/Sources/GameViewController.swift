@@ -2,7 +2,7 @@ import UIKit
 import PlaygroundSupport
 
 
-class GameViewController: UIViewController {
+public class GameViewController: UIViewController {
     
     var questionsCorrect: Int = 0
     var timer: Int = 20
@@ -13,7 +13,8 @@ class GameViewController: UIViewController {
     let timerLabel      = UILabel()
     
     
-    public override func didMove(toParent parent: UIViewController?) {
+    public override func viewDidLoad() {
+        super.viewDidLoad()
         let view = UIView()
         view.backgroundColor = UIColor(red:0.22, green:0.22, blue:0.30, alpha:1.0)
         self.view = view

@@ -86,7 +86,11 @@ class HomeViewController: UIViewController {
     }
     
     @objc func buttonAction(sender: UIButton!) {
-        self.presentViewController(GameViewController, animated: true, completion: nil)
+        let gvc = GameViewController()
+        gvc.preferredContentSize = CGSize(width: 375, height: 667) //iPhone 6
+        PlaygroundSupport.PlaygroundPage.current.liveView = gvc
+        PlaygroundPage.current.needsIndefiniteExecution = true
+        gvc.view
     }
     
 }
