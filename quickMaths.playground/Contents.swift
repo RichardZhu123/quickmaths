@@ -1,4 +1,14 @@
 //: It may take a couple tries before the app runs properly (if it does not run properly you will see a black screen). This appears to be a possible problem with UIKit in the Playground environment
+/*:
+ This playground consists of a game that tests the player's ability to quickly do mental math
+ */
+
+/*:
+ #Game
+ The **goal** of the game is to solve as many questions as possible within 20 seconds by drawing the number representing the correct sum in the box. Each incorrect answers detracts 2 seconds from the countdown timer. The game can be replayed as many times as the user would like.
+ 
+ **See if you can get above 25 questions correct :P **
+ */
 
 import PlaygroundSupport
 import UIKit
@@ -75,14 +85,8 @@ class HomeViewController: UIViewController {
         startButton.bottomAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 175).isActive = true
     }
     
-    @objc func buttonAction(sneder: UIButton!) {
-        let sceneView = SKView(frame: CGRect(x:0 , y:0, width: 375, height: 667))
-        let scene = GameScene(size: CGSize(width: 375, height: 667))
-        scene.scaleMode = .aspectFill
-        
-        sceneView.presentScene(scene)
-        
-        self.view.addSubview(sceneView)
+    @objc func buttonAction(sender: UIButton!) {
+        self.presentViewController(GameViewController, animated: true, completion: nil)
     }
     
 }
